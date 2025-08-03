@@ -1,14 +1,14 @@
 class Solution:
     def distributeCandies(self, n: int, limit: int) -> int:
-            def comb2(m: int) -> int:
-                return (m * (m - 1) // 2) if m >= 2 else 0
+        def comb2(m: int) -> int:
+            return (m * (m - 1) // 2) if m >= 2 else 0
             
-            total = comb2(n + 2)
-            total -= 3 * comb2(n - limit + 1)
-            total += 3 * comb2(n - 2 * limit)
-            total -= comb2(n - 3 * limit - 1)     
+        total = comb2(n + 2)
+        total -= 3 * comb2(n - limit + 1)
+        total += 3 * comb2(n - 2 * limit)
+        total -= comb2(n - 3 * limit - 1)     
             
-            return total
+        return total
 
 
 if __name__ == "__main__":
