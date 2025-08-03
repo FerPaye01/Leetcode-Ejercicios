@@ -44,9 +44,6 @@ def ntt(a: Union[array, list], roots: List[int]):
                 w = (w * w_len) % MOD
 
 def main():
-    """Función principal con I/O y lógica optimizadas."""
-    # --- I/O Optimizada ---
-    # Lee todos los bytes del stdin de una vez
     data = sys.stdin.buffer.read().split()
     
     n_val = int(data[0])
