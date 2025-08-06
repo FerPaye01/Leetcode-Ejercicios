@@ -1,8 +1,28 @@
+"""import sys
+ 
+def main():
+    data = sys.stdin.read().split()
+    t = int(data[0])
+    index = 1
+    resultados = []
+    for _ in range(t):
+        n = int(data[index])
+        index += 1
+        arr = list(map(int, data[index:index+n]))
+        index += n
+        suma_total = sum(arr)
+        cantidad_ceros = arr.count(0)
+        respuesta = suma_total + cantidad_ceros
+        resultados.append(str(respuesta))
+    
+    print("\n".join(resultados))
+ 
+if __name__ == "__main__":
+    main()"""
+
 import sys
 
 def main():
-    # ---> Para stdin: descomenta abajo y comenta hasta "# comentario"
-    # data = sys.stdin.read().split()
     test_cases = [
         [0, 1, 1],        # Ejemplo 1: n=3
         [1, 2, 3],         # Ejemplo 2: n=3
@@ -25,8 +45,7 @@ def main():
         data.append(str(len(arr)))
         data.extend(map(str, arr))
     
-    # comentario
-
+    # Procesamiento de los datos
     t = int(data[0])
     index = 1
     resultados = []
