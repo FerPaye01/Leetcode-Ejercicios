@@ -75,8 +75,7 @@ def main():
     sys.stdout.write("\n".join(SALIDAS))
 
 if __name__ == "__main__":
-    main()
-"""
+    main()"""
 
 
 import sys
