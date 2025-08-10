@@ -1,18 +1,13 @@
-class Solution:
-    def reorderedPowerOf2(self, n: int) -> bool:
-        """
-        Devuelve True si existe una permutación de los dígitos de n (sin ceros
-        a la izquierda) que sea una potencia de 2.
-        """
-        # cadena con los dígitos de n ordenados (representa el multiconjunto de dígitos)
-        digitos_ordenados = ''.join(sorted(str(n)))
-
-        # precomputar conjunto de representaciones ordenadas de 2^0 .. 2^30
-        conjunto_potencias = { ''.join(sorted(str(1 << exponente))) for exponente in range(31) }
-
-        # si la representación ordenada de n aparece en el conjunto, existe la permutación buscada
-        return digitos_ordenados in conjunto_potencias
-
+class Solution: 
+     # Clase contenedora que expone la interfaz 'reorderedPowerOf2' utilizada en plataformas como LeetCode.
+    def reorderedPowerOf2(self, n: int) -> bool:  
+        # Método público: recibe un entero n y retorna True si alguna permutación válida de sus dígitos es potencia de 2.
+        digitos_ordenados = ''.join(sorted(str(n)))  
+        # Representación canónica del multiconjunto de dígitos: convertir a cadena, ordenar y concatenar (coste O(d log d)).
+        conjunto_potencias = {''.join(sorted(str(1 << exponente))) for exponente in range(31)} 
+        # Precomputación de multiconjuntos de dígitos para 2^0..2^30 (2^30 > 10**9), almacenamiento en conjunto para búsqueda O(1) amortizada.
+        return digitos_ordenados in conjunto_potencias  
+    # Comprobación de pertenencia en el conjunto precomputado; devuelve booleano según coincidencia exacta del multiconjunto.
 
 # Bloque de pruebas básicas
 if __name__ == "__main__":
